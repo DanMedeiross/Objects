@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>
+			Exemplo de objetos
+		</title>
+		<script type="text/javascript">
+			<!--O objeto navigator guarda informações sobre o browser-->
+			alert(navigator.userAgent);
+			
+			<!--O objeto location-->
+			function novaPagina() {
+				location.href="pagina-ficticia.html"
+				return false
+			}
+			/* Cria um objeto com a data e hora atuais e mostra o seu 
+			   valor na janela recorrendo ao método toLocaleString()
+			   do objeto Date */
+			function dataAtual() {
+				var d = new Date();
+				document.write("A data e hora s&atilde;o: " + d.toLocaleString());
+			}
+			function Vetor() {
+				<!--Capaz de guardar muitos valores, tantos quanto memória disponível na máquina-->
+				var frutas_nacionais = new Array(3);
+					frutas_nacionais[0] = "Maçã";
+					frutas_nacionais[1] = "Cereja";
+					frutas_nacionais[2] = "Laranja";
+					
+				for(var i=0; i < frutas_nacionais.length; i++) {
+					var frutas = frutas_nacionais[i]
+					alert(frutas);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			Clique no botão para trocar esta página por outra:
+			<br>
+			<input type="button" onclick="novaPagina()" value="Trocar página">
+			<br>
+			Clique no botão para ver os elementos do vetor:
+			<br>
+			<input type="button" onclick="Vetor()" value="Vetor">
+			<br>
+			<script type="text/javascript">
+				dataAtual();
+			</script>
+			<br>
+			<!--Carrega a página anterior. Não funciona caso o botão voltar do navegador for selecionado-->
+			<a href="javascript:history.go(-1)">
+				Voltar
+			</a>
+		</form>
+	</body>
+</html>
